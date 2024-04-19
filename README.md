@@ -54,14 +54,14 @@ Neste trabalho vamos apresentar a implementação de uma versão simplificada do
 <a name="instru"></a>
 # __Instruções de Jogo__
 * __Objetivo:__ 
-    - Mova o Pac-Man pelo labirinto para comer todos os pontos e evitar os fantasmas.
+    - Mover o Pac-Man pelo labirinto para comer todos os pontos e evitar os fantasmas.
 * __Controlos:__
-    - __Setas Direcionais:__ Mova o Pac-Man nas direções desejadas.
+    - __Setas Direcionais:__ Mover o Pac-Man nas direções desejadas.
 * __Fantasmas e Vidas:__
-    - __Fantasmas:__ Evite ser capturado por os fantasmas.
+    - __Fantasmas:__ Evitar ser capturado por os fantasmas.
     - __Vidas:__ Tem um número limitado de vidas.
 * __Pontuação:__
-    - Acumule pontos ao comer os pontos pelo labirinto.
+    - Acumular pontos ao comer os pontos pelo labirinto.
 
 <a name="decisoes"></a>
 # __Decisões de Implementação__
