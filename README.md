@@ -49,19 +49,19 @@ Neste trabalho vamos apresentar a implementação de uma versão simplificada do
     
 
 - __Pacman/:__ Contém recursos como imagens, fontes e sons.
-- __Code/:__ Contém o código-fonte do jogo organizado em entidades, gerenciadores, telas e ajudantes.
+- __Code/:__ Contém o código-fonte do jogo organizado em entidades, gerenciadores, ecras e ajudantes.
 
 <a name="instru"></a>
 # __Instruções de Jogo__
 * __Objetivo:__ 
     - Mova o Pac-Man pelo labirinto para comer todos os pontos e evitar os fantasmas.
-* __Controles:__
+* __Controlos:__
     - __Setas Direcionais:__ Mova o Pac-Man nas direções desejadas.
 * __Fantasmas e Vidas:__
-    - __Fantasmas:__ Evite ser capturado pelos fantasmas.
-    - __Vidas:__ Você tem um número limitado de vidas.
+    - __Fantasmas:__ Evite ser capturado por os fantasmas.
+    - __Vidas:__ Tem um número limitado de vidas.
 * __Pontuação:__
-    - Acumule pontos comendo os pontos pelo labirinto.
+    - Acumule pontos ao comer os pontos pelo labirinto.
 
 <a name="decisoes"></a>
 # __Decisões de Implementação__
@@ -70,8 +70,8 @@ Neste trabalho vamos apresentar a implementação de uma versão simplificada do
      - __Ghost:__ Representa os inimigos que perseguem o Pac-Man.
 *  __Gerenciadores:__
      - __GameManager:__ Gerencia o estado geral do jogo, como pontuação e vidas.
-*	 __Telas:__
-     - __GameScreen:__ Controla o fluxo do jogo, como iniciar, pausar e encerrar.
+*	 __Ecrãs:__
+     - __GameScreen:__ Controla o fluxo do jogo, como iniciar, parar e encerrar.
 *	 __Ajudantes:__
      - __CollisionHelper:__ Auxilia na detecção de colisões entre entidades.
 
@@ -120,7 +120,7 @@ namespace Pacman
 
 <a name="controller"></a>
 ## 	 	__Controller.cs:__
-O Controller.cs gerencia várias partes do jogo, incluindo a criação do mapa, movimento dos personagens, interação com itens no mapa , e o gerenciamento do estado do jogo (normal, fim de jogo, menu). 
+O Controller.cs controla várias partes do jogo, incluindo a criação do mapa, movimento dos personagens, interação com itens no mapa , e o gerenciamento do estado do jogo (normal, fim de jogo, menu). 
 
 Além disso, ele controla a lógica dos fantasmas, a detecção de colisões, e a mudança de estados do jogo, como quando os fantasmas estão em perseguição ou fuga. Em resumo, o código coordena todas as funcionalidades necessárias para proporcionar uma experiência jogável do Pacman.
 
@@ -170,13 +170,13 @@ namespace Pacman
 ```
 <a name="game1"></a>
 ## 		__Game1.cs:__
-O Game1.cs é o principal do jogo Pac-Man, onde a maioria das operações essenciais acontecem. Ela gerencia o ciclo de vida do jogo, desde sua inicialização até a renderização na tela. Responsável por carregar recursos, como imagens e sons, também coordena a interação entre os elementos do jogo, como os fantasmas, o jogador e os itens. Além disso, controla o estado do jogo, como pausas, game over e retorno ao menu principal. 
+O Game1.cs é o principal do jogo Pac-Man, onde a maioria das operações essenciais acontecem. Controla o ciclo de vida do jogo, desde sua inicialização até a renderização no ecrã. Responsável por carregar recursos, como imagens e sons, também coordena a interação entre os elementos do jogo, como os fantasmas, o jogador e os itens. Além disso, controla o estado do jogo, como paragens, game over e volta ao menu principal. 
 
 Em resumo, é responsável por garantir uma experiência de jogo fluida e envolvente para o jogador.
 
 <a name="gameover"></a>
 ## 	 	__GameOver.cs:__
-A classe GameOver controla a tela de fim de jogo. Quando a tecla de espaço é pressionada, ela volta ao menu principal. 
+A classe GameOver controla o ecrã do fim de jogo. Quando a tecla de espaço é pressionada, volta ao menu principal. 
 
 A mensagem "game over!" é exibida em vermelho, e há uma instrução para pressionar a tecla espaço para voltar ao menu. 
 
@@ -220,9 +220,9 @@ namespace Pacman
 ```
 <a name="menu"></a>
 ## 	 	__Menu.cs:__
-O Menu.cs, responsável por exibir e gerenciar o menu inicial do jogo. Ela contém métodos para atualizar e desenhar o menu na tela, incluindo o logotipo do Pac-Man e a mensagem "PRESS ENTER TO PLAY". 
+O Menu.cs, responsável por exibir e gerenciar o menu inicial do jogo. Contém métodos para atualizar e desenhar o menu no ecrã, incluindo o logotipo do Pac-Man e a mensagem "PRESS ENTER TO PLAY". 
 
-Quando o jogador pressiona a tecla Enter, o estado do jogo muda para o modo normal e o som de início do jogo é reproduzido.
+Quando o jogador clica na tecla Enter, o estado do jogo muda para o modo normal e o som de início do jogo é reproduzido.
 
 ```
 using System;
@@ -273,7 +273,7 @@ namespace Pacman
 ```
 <a name="node"></a>
 ## 	 	__Node.cs:__
-A classe Node neste código serve como uma representação abstrata de um ponto específico no mapa do jogo Pac-Man. Ela é essencial para o algoritmo de busca utilizado para calcular os caminhos que os fantasmas devem seguir para alcançar o jogador. Cada nó armazena informações importantes, como sua posição, se é ou não um local onde os fantasmas podem se mover, os custos associados ao movimento até esse ponto e uma referência ao nó pai. 
+A classe Node neste código serve como uma representação abstrata de um ponto específico no mapa do jogo Pac-Man. É essencial para o algoritmo de busca utilizado para calcular os caminhos que os fantasmas devem seguir para alcançar o jogador. Cada nó armazena informações importantes, como a sua posição, se é ou não um local onde os fantasmas podem se mover, os custos associados ao movimento até esse ponto e uma referência ao nó pai. 
 
 Isso permite que o jogo determine os caminhos mais eficientes para os fantasmas percorrerem o labirinto, evitando paredes e obstáculos. Em resumo, a classe Node desempenha um papel crucial na inteligência artificial dos fantasmas, garantindo que eles persigam o jogador de forma inteligente e desafiadora.
 
@@ -564,9 +564,9 @@ namespace Pacman
 
 <a name="snack"></a>
 ## 	 	__Snack.cs:__
-O snack.cs serve para representar as bolinhas que se comem.Existem dois tipos de bolas: pequenas e grandes, cada um com sua própria pontuação. 
+O snack.cs serve para representar as bolinhas que se comem. Existem dois tipos de bolas: pequenas e grandes, cada um com sua própria pontuação. 
 
-A classe desenha as bolinhas  na tela e inclui uma lógica de animação para as bolinhas grandes.
+A classe desenha as bolinhas no ecrã e inclui uma lógica de animação para as bolinhas grandes.
 
 ```
 using System;
@@ -636,7 +636,7 @@ namespace Pacman
 ## 	 	__SpriteAnimation.cs:__
 O __SpriteAnimation.cs__ controla a reprodução de retângulos que representam diferentes quadros da animação. 
 
-A classe permite controlar a reprodução, paragem e reinício da animação, além de desenhar os sprites animados na tela.
+A classe permite controlar a reprodução, paragem e reinício da animação, além de desenhar os sprites animados no ecrã.
 ```
 using System;
 using System.Collections.Generic;
@@ -766,7 +766,7 @@ namespace Pacman
 ```
 <a name="text"></a>
 ## 	 	__Text.cs:__
-O __Text.cs__ serve para desenhar texto na tela do jogo. Ele permite desenhar texto em duas cores diferentes (branco ou vermelho) e ajustar o espaçamento entre as letras. 
+O __Text.cs__ serve para desenhar texto no ecrã do jogo. Ele permite desenhar texto em duas cores diferentes (branco ou vermelho) e ajustar o espaçamento entre as letras. 
 
 As letras disponíveis estão definidas como retângulos em uma folha de sprite. A classe Text fornece métodos para desenhar texto em diferentes escalas e cores.
 
@@ -869,7 +869,7 @@ namespace Pacman
 }
 ```
 # __Conclusão__
-Implementamos com sucesso uma versão simplificada do clássico Pac-Man usando MonoGame em C#. Este design recria a emoção do jogo original, mantendo a jogabilidade icónica e desafiante. Com controles simples e objetivos claros, o jogo oferece uma experiência divertida e envolvente para jogadores de todas as idades. A combinação de design retro com tecnologia moderna faz desta versão do Pac-Man um tributo ao legado duradouro deste jogo intemporal.
+Implementamos com sucesso uma versão simplificada do clássico Pac-Man usando MonoGame em C#. Este design recria a emoção do jogo original, mantendo a jogabilidade icónica e desafiante. Com uma jogabilidade simples e objetivos claros, o jogo oferece uma experiência divertida e envolvente para jogadores de todas as idades. A combinação de design retro com tecnologia moderna faz desta versão do Pac-Man um tributo ao legado duradouro deste jogo intemporal.
 
 <p align="center">
   <img src="https://lh4.googleusercontent.com/proxy/Pk0kAWyTCeDVYcgMK34QZbTBDLMRxyOAU_fmoxJUxoJs2Mjge3j6gBT3HY6bIGodMr233c4D1hk-_jPB-P38AJPIYu0QAtIZFPayv_1TlP1cYAYCa2Sr4h8J_yVe" width="300" alt="Pacman">
