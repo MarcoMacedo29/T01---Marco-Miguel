@@ -402,7 +402,7 @@ namespace Pacman
 }
 ```
 <a name="pathfinding"></a>
-##  __Pathfinfinding.cs:__
+##  __Pathfinding.cs:__
 O Pathfinding.cs  encontra o caminho mais curto entre dois pontos no mapa do jogo, considerando os obstáculos e escolhendo o caminho mais eficiente possível. 
 
 Isso é crucial para os inimigos do jogo (fantasmas) planejarem seus movimentos para perseguir o jogador enquanto evitam colisões com paredes e obstáculos.
